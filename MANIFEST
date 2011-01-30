@@ -1,0 +1,16 @@
+Changes
+Makefile.PL
+MANIFEST
+README
+t/prereq.t
+t/use.t
+t/can.t
+t/new.t
+t/search.t
+t/response/use.t
+t/response/can.t
+t/response/new.t
+t/response/search.t
+lib/WWW/Amazon/BookInfo.pm
+lib/WWW/Amazon/BookInfo/Response.pm
+

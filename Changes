@@ -1,0 +1,6 @@
+Revision history for Perl extension WWW::Amazon::BookInfo.
+
+0.01  Sun Jan 30 17:22:45 2011
+    - original version; created by h2xs 1.23 with options
+        -XAn WWW::Amazon::BookInfo
+
