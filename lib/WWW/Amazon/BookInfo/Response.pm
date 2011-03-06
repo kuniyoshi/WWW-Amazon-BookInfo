@@ -12,11 +12,11 @@ use Scalar::Util qw( blessed );
 use List::MoreUtils qw( none );
 use Business::ISBN;
 
-Readonly my @IMAGE_TYPES => qw(
+Readonly our @IMAGE_TYPES => qw(
     thumbnail  small  tiny  swatch  medium  large
 );
 
-our $VERSION = "0.01";
+our $VERSION = "0.02";
 
 sub isbn {
     my $self = shift;
@@ -75,6 +75,30 @@ sub image {
     };
 }
 
+sub item_attributes {
+    return shift->{xmlref}{Items}[0]{ItemAttributes};
+}
+
+sub authors {
+    return @{ shift->item_attributes->{Author} };
+}
+
+sub publisher {
+    return shift->item_attributes->{Publisher};
+}
+
+sub title {
+    return shift->item_attributes->{Title};
+}
+
+sub numpages {
+    return shift->item_attributes->{NumberOfPages};
+}
+
+sub publication_date {
+    return shift->item_attributes->{PublicationDate};
+}
+
 1;
 
 __END__
@@ -100,13 +124,10 @@ Blah blah blah.
 =item publisher
 =item title
 =item isbn
-=item edition
-=item ean
 =item numpages
-=item dewey_decimal
 =item publication_date
-=item images
 =item image
+=item image_types
 
 =back
 

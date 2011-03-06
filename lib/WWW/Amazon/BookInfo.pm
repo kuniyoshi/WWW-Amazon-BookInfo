@@ -12,7 +12,7 @@ use Scalar::Util qw( blessed );
 use Business::ISBN;
 use WWW::Amazon::BookInfo::Response;
 
-our $VERSION = "0.01";
+our $VERSION = "0.02";
 
 Readonly my %DEFAULT => (
     locale => "jp",
@@ -69,8 +69,13 @@ WWW::Amazon::BookInfo - Wrapper for Net::Amazon to simple find book info.
 
   use WWW::Amazon::BookInfo;
 
-  my $ua  = WWW::Amazon::BookInfo;  
-  my $res = $ua->get( isbn => $isbn );
+  my $ua  = WWW::Amazon::BookInfo->new(
+      token      => $token,
+      secret_key => $secret_key,
+  );
+
+  my $res = $ua->search( isbn => $isbn );
+
   say $res->isbn;
 
 =head1 DESCRIPTION

@@ -1,8 +1,6 @@
 use 5.010000;
 use ExtUtils::MakeMaker;
 
-eval "use Test::Manifest";
-
 WriteMakefile(
     NAME              => 'WWW::Amazon::BookInfo',
     VERSION_FROM      => 'lib/WWW/Amazon/BookInfo.pm',
