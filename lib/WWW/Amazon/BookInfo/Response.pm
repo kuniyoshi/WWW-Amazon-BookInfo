@@ -121,12 +121,19 @@ Blah blah blah.
 =over
 
 =item authors
+
 =item publisher
+
 =item title
+
 =item isbn
+
 =item numpages
+
 =item publication_date
+
 =item image
+
 =item image_types
 
 =back
