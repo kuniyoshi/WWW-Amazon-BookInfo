@@ -16,7 +16,7 @@ Readonly our @IMAGE_TYPES => qw(
     thumbnail  small  tiny  swatch  medium  large
 );
 
-our $VERSION = "0.02";
+our $VERSION = "0.03";
 
 sub isbn {
     my $self = shift;
@@ -59,7 +59,8 @@ sub image {
 
     my $image = do {
         my $key = sprintf "%sImage", ucfirst $type;
-        $self->{xmlref}{Items}[0]{ImageSets}{ImageSet}{$key};
+        my $set = $self->{xmlref}{Items}[0]{ImageSets}{ImageSet};
+        ref $set eq ref { } ? $set->{ $key } : $set->[0]{ $key };
     };
 
     die "The height units isn't pixels"

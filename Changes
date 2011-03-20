@@ -1,5 +1,8 @@
 Revision history for Perl extension WWW::Amazon::BookInfo.
 
+0.03  Sun Mar 20 11:30:21 2011
+    - Fix a bug in image that will die when ImageSets->ImageSet is a array ref.
+      befor fix, i expect it is a hash ref, but it can be a list of hash ref.
 0.02  Sun Mar  6 21:26:00 2011
     - Add some simple accessors of response.
 0.01  Sun Jan 30 17:22:45 2011

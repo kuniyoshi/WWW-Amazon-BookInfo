@@ -12,7 +12,7 @@ use Scalar::Util qw( blessed );
 use Business::ISBN;
 use WWW::Amazon::BookInfo::Response;
 
-our $VERSION = "0.02";
+our $VERSION = "0.03";
 
 Readonly my %DEFAULT => (
     locale => "jp",
